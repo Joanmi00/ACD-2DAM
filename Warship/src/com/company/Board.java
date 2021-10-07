@@ -6,8 +6,8 @@ import java.io.*;
 public class Board {
 
     // Constantes del tablero
-    public static final int BOARD_DIM = 10;
-    public static final int BOARD_BOATS_COUNT = 5;
+    public static int BOARD_DIM = 10;
+    public static int BOARD_BOATS_COUNT = 5;
 
     // Propiedades de la clase
     private Cell cells[][];
@@ -50,7 +50,7 @@ public class Board {
         boats = new Boat[BOARD_BOATS_COUNT];
         for (int i=0; i<BOARD_BOATS_COUNT; i++){
             boats[i] = new Boat();
-            boats[i].setBoat(dimensiones[i], this);
+            boats[i].setBoat(dimensiones[i], this, i);
             boats[i].viewCells(); //Muestra por pantalla la posición que ocupan
         }
     }
@@ -179,7 +179,7 @@ public class Board {
                 String linea = bufferR.readLine();
                 String[] items = linea.split(";");
                 boats[Integer.parseInt(items[0])] = new Boat();
-                boats[Integer.parseInt(items[0])].setBoat(Integer.parseInt(items[1]), this, Integer.parseInt(items[0]), Integer.parseInt(items[3]), Integer.parseInt(items[4]),Integer.parseInt(items[2]));
+                boats[Integer.parseInt(items[0])].setBoat2(Integer.parseInt(items[1]), this, Integer.parseInt(items[0]), Integer.parseInt(items[3]), Integer.parseInt(items[4]),Integer.parseInt(items[2]));
                 boats[Integer.parseInt(items[0])].viewCells();
             }
         } catch (IOException e) {

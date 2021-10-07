@@ -67,6 +67,7 @@ public class Boat {
             bw.close();
         } catch (IOException e) {
             System.out.println(e.getMessage());
+
         }finally {
             try {
                 fileW.close();
@@ -76,7 +77,7 @@ public class Boat {
         }
     }
 
-    public void setBoat(int dim, Board board, int ID, int fila, int columna, int dir){
+    public void setBoat2(int dim, Board board, int ID, int fila, int columna, int dir){
         cells = new Cell[dim];
         this.dimension = dim;
 
@@ -86,7 +87,7 @@ public class Boat {
                 this.cells[i-columna].setBoat(this);
             }
         } else {
-            for (int i=fila;i<fila+dim;i++){ //BOAT_DIR_VER
+            for (int i=fila;i<fila+dim;i++){
                 this.cells[i-fila] = board.getCell(i, columna);
                 this.cells[i-fila].setBoat(this);
             }
