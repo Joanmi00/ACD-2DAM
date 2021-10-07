@@ -1,3 +1,5 @@
-# Practica1
+# ACCES A DADES - 2n DAM
 
-## Aquesta es la primera paractica amb Figures Geometriques
+## Joanmi Felis Toledo
+
+### Aci pujare les practiques de Acces a Dades de 2n DAM
